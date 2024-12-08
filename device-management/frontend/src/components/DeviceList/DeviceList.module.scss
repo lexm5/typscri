@@ -20,5 +20,18 @@
         &:hover {
             background-color: #f1f1f1;
         }
+
+        .deleteButton {
+            padding: 5px 10px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #c0392b;
+            }
+        }
     }
 }
