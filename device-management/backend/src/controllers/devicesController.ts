@@ -24,3 +24,20 @@ export const registerDevice = async (req: Request, res: Response) => {
         res.status(500).json({ error: 'Failed to register device' });
     }
 };
+
+export const deleteDevice = async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    try {
+        const deletedRows = await db('devices').where('id', id).del();
+        if (deletedRows) {
+            res.status(200).json({ message: `Device with ID ${id} deleted` });
+        } else {
+            res.status(404).json({ error: 'Device not found' });
+        }
+    } catch (error) {
+        console.error('Error deleting device:', error);
+        res.status(500).json({ error: 'Failed to delete device' });
+    }
+};
+
