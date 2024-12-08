@@ -12,6 +12,7 @@ type Device = {
 const DeviceList: React.FC = () => {
     const [devices, setDevices] = useState<Device[]>([]); //<Device[]>([])はTypescriptのアノテーション, []は状態の初期値
 
+    //第2引数とが空のため、初回レンダリング時のみ1
     useEffect(() => {
         fetchDevices();
     }, []);
